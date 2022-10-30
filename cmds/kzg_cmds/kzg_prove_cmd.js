@@ -1,5 +1,5 @@
 const {resolve} = require("path");
-const {kzgProve} = require("../../src/services/kzg_prove");
+const {kzgProveService} = require("../../src/services/kzg_prove_srv");
 
 exports.command = 'prove  <pilFilename> <cnstPolsFilename> <cmmtPolsFilename> <ptauFilename> <publicFilename> <proofFilename>'
 exports.desc = '...' //TODO
@@ -38,5 +38,5 @@ exports.handler = async function (argv) {
     argv.publicFilename = resolve(argv.publicFilename);
     argv.proofFilename = resolve(argv.proofFilename);
 
-    await kzgProve(argv.pilFilename, argv.pilConfigFilename, argv.cnstPolsFilename, argv.cmmtPolsFilename, argv.ptauFilename, argv.publicFilename, argv.proofFilename, options);
+    await kzgProveService(argv.pilFilename, argv.pilConfigFilename, argv.cnstPolsFilename, argv.cmmtPolsFilename, argv.ptauFilename, argv.publicFilename, argv.proofFilename, options);
 }

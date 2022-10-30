@@ -1,0 +1,6 @@
+constant %N = 2**4;
+
+namespace Global(%N);
+    pol constant L1;
+
+include "simple.pil";

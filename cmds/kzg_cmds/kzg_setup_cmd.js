@@ -1,5 +1,5 @@
 const {resolve} = require("path");
-const {kzgSetup} = require("../../src/services/kzg_setup");
+const {kzgSetupService} = require("../../src/services/kzg_setup_srv");
 
 exports.command = 'setup <pilFilename> <cnstPolsFilename> <ptauFilename> <preprocessedFilename>'
 exports.desc = '...' //TODO
@@ -30,5 +30,5 @@ exports.handler = async function (argv) {
     argv.ptauFilename = resolve(argv.ptauFilename);
     argv.preprocessedFilename = resolve(argv.preprocessedFilename);
 
-    await kzgSetup(argv.pilFilename, argv.pilConfigFilename, argv.cnstPolsFilename, argv.ptauFilename, argv.preprocessedFilename, options);
+    await kzgSetupService(argv.pilFilename, argv.pilConfigFilename, argv.cnstPolsFilename, argv.ptauFilename, argv.preprocessedFilename, options);
 }

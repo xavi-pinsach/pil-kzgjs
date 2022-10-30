@@ -1,5 +1,5 @@
 const {resolve} = require("path");
-const {pilBuildConstant} = require("../../../src/services/pil_build_cnst");
+const {pilBuildConstantService} = require("../../../src/services/pil_build_cnst_srv");
 
 exports.command = 'constant <pilFilename> <smFilename> <outputFilename> [options]'
 exports.desc = 'Build all the constant polynomials defined in the PIL program using the builder'
@@ -24,5 +24,5 @@ exports.handler = async function (argv) {
     argv.smFilename = resolve(argv.smFilename);
     argv.outputFilename = resolve(argv.outputFilename);
 
-    await pilBuildConstant(argv.pilFilename, argv.pilConfigFilename, argv.smFilename, argv.outputFilename, options);
+    await pilBuildConstantService(argv.pilFilename, argv.pilConfigFilename, argv.smFilename, argv.outputFilename, options);
 }

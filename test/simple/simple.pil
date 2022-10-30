@@ -1,0 +1,9 @@
+namespace Simple(%N);
+    pol constant CNST;
+    pol constant CNST2;
+
+    pol commit   cmmt;
+
+    CNST in CNST2;
+    (CNST' + 3) * 1 = cmmt' + 0 + 3;
+

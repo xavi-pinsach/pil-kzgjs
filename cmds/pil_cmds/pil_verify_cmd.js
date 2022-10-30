@@ -1,5 +1,5 @@
 const {resolve} = require("path");
-const {pilVerify} = require("../../src/services/pil_verify");
+const {pilVerifyService} = require("../../src/services/pil_verify_srv");
 
 exports.command = 'verify <pilFilename> <cnstPolsFilename> <cmmtPolsFilename> [options]'
 exports.desc = 'Check if constant polynomials and committed polynomials fit with the PIL program'
@@ -27,5 +27,5 @@ exports.handler = async function (argv) {
     argv.cnstPolsFilename = resolve(argv.cnstPolsFilename);
     argv.cmmtPolsFilename = resolve(argv.cmmtPolsFilename);
 
-    await pilVerify(argv.pilFilename, argv.pilConfigFilename, argv.cnstPolsFilename, argv.cmmtPolsFilename, options);
+    await pilVerifyService(argv.pilFilename, argv.pilConfigFilename, argv.cnstPolsFilename, argv.cmmtPolsFilename, options);
 }

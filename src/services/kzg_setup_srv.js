@@ -1,9 +1,9 @@
 const Logger = require("logplease");
 
-const logger = Logger.create("pilkatejs", {showTimestamp: false});
+const logger = Logger.create("pil-kzgjs", {showTimestamp: false});
 Logger.setLogLevel("INFO");
 
-async function kzgSetup(pilFile, pilConfigFile, cnstPolsFile, ptauFile, preprocessedFile, options) {
+module.exports.kzgSetupService = async function (pilFile, pilConfigFile, cnstPolsFile, ptauFile, preprocessedFile, options) {
     if (options.verbose) Logger.setLogLevel("DEBUG");
 
     //const vkOutput = await kzg.kzgSetup(pilFile, pilConfigFile, cnstPolsFile, ptauFile, logger);
@@ -12,5 +12,3 @@ async function kzgSetup(pilFile, pilConfigFile, cnstPolsFile, ptauFile, preproce
 
     return 0;
 }
-
-module.exports.kzgSetup = kzgSetup;

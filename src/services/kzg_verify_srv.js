@@ -1,9 +1,9 @@
 const Logger = require("logplease");
 
-const logger = Logger.create("pilkatejs", {showTimestamp: false});
+const logger = Logger.create("pil-kzgjs", {showTimestamp: false});
 Logger.setLogLevel("INFO");
 
-async function kzgVerify(preprocessedFile, publicFile, proofFile, options) {
+module.exports.kzgVerifyService = async function (preprocessedFile, publicFile, proofFile, options) {
     if (options.verbose) Logger.setLogLevel("DEBUG");
 
     //const preprocessed = JSON.parse(fs.readFileSync(preprocessedFile, "utf8"));
@@ -12,5 +12,3 @@ async function kzgVerify(preprocessedFile, publicFile, proofFile, options) {
 
     //return await kzg.kzgVerify(preprocessed, /*publicInputs,*/ proof, logger);
 }
-
-module.exports.kzgVerify = kzgVerify;

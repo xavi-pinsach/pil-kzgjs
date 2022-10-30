@@ -1,5 +1,5 @@
 const {resolve} = require("path");
-const {pilBuildCommitted} = require("../../../src/services/pil_build_cmmt");
+const {pilBuildCommittedService} = require("../../../src/services/pil_build_cmmt_srv");
 
 exports.command = 'committed <pilFilename> <smFilename> <smInputs> <outputFilename> [options]'
 exports.desc = 'Build all the constant polynomials defined in the PIL program using the builder'
@@ -30,5 +30,5 @@ exports.handler = async function (argv) {
     argv.smInputs = resolve(argv.smInputs);
     argv.outputFilename = resolve(argv.outputFilename);
 
-    await pilBuildCommitted(argv.pilFilename, argv.pilConfigFilename, argv.smFilename, argv.smInputs, argv.outputFilename, options);
+    await pilBuildCommittedService(argv.pilFilename, argv.pilConfigFilename, argv.smFilename, argv.smInputs, argv.outputFilename, options);
 }

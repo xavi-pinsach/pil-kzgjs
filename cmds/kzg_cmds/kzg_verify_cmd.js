@@ -1,5 +1,5 @@
 const {resolve} = require("path");
-const {kzgVerify} = require("../../src/services/kzg_verify");
+const {kzgVerifyService} = require("../../src/services/kzg_verify_srv");
 
 exports.command = 'verify <preprocessedFilename> <publicFilename> <proofFilename>'
 exports.desc = '...' //TODO
@@ -21,5 +21,5 @@ exports.handler = async function (argv) {
     argv.publicFilename = resolve(argv.publicFilename);
     argv.proofFilename = resolve(argv.proofFilename);
 
-    await kzgVerify(argv.preprocessedFilename, argv.publicFilename, argv.proofFilename, options);
+    await kzgVerifyService(argv.preprocessedFilename, argv.publicFilename, argv.proofFilename, options);
 }
