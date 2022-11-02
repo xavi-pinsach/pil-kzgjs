@@ -34,6 +34,7 @@
     "chai": "^4.3.6",
     "crypto": "^1.0.1",
     "ffjavascript": "^0.2.57",
+    "js-sha3": "^0.8.0",
     "logplease": "^1.2.15",
     "pilcom": "^0.0.18",
     "yargs": "^17.6.0"

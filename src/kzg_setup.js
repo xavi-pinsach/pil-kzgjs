@@ -24,7 +24,6 @@ const {compile, newConstantPolsArray} = require("pilcom");
 const {log2} = require("pilcom/src/utils");
 const {stringifyBigInts} = require("ffjavascript").utils;
 const {Polynomial} = require("./polynomial/polynomial");
-const {F3G} = require("./f3g");
 
 
 module.exports.kzgSetup = async function (pilFile, pilConfigFile, cnstPolsFile, ptauFile, logger) {
